@@ -1,0 +1,57 @@
+{
+  "name": "prs_react_system",
+  "version": "1.0.0",
+  "description": "PRS Custom Web Panel.",
+  "engines": {
+    "node": "14.17.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "jest",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=true npm install --prefix client && npm run heroku-build --prefix client"
+  },
+  "author": "Nick Morgan and JC",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@aws-sdk/client-ses": "^3.53.0",
+    "@stripe/react-stripe-js": "^1.9.0",
+    "@stripe/stripe-js": "^1.32.0",
+    "@types/react": "^18.0.14",
+    "agenda": "^4.2.1",
+    "axios": "^0.20.0",
+    "concurrently": "^5.3.0",
+    "countries-code": "^1.1.0",
+    "country-state-city-slim": "^2.0.11",
+    "express": "^4.17.3",
+    "express-html-sanitizer": "^1.0.0",
+    "fast-equals": "^4.0.1",
+    "firebase": "^7.19.1",
+    "firebase-admin": "^9.1.1",
+    "generate-password": "^1.5.1",
+    "handlebars": "^4.7.7",
+    "hot-formula-parser": "^4.0.0",
+    "install": "^0.13.0",
+    "json-fn": "^1.1.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.13.14",
+    "mongoose-aggregate-paginate-v2": "^1.0.42",
+    "mongoose-paginate-v2": "^1.6.2",
+    "nodemailer": "^6.7.2",
+    "puppeteer": "^13.7.0",
+    "stripe": "^9.9.0",
+    "recharts": "^2.1.11",
+    "use-constant": "^1.1.0",
+    "xlsx": "^0.18.5",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "jest": "^24.9.0",
+    "nodemon": "^2.0.4"
+  }
+}
