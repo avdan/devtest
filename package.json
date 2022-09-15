@@ -7,6 +7,9 @@
   },
   "main": "index.js",
   "scripts": {
+    "lint": "eslint . --fix --max-warnings=0",
+    "format": "prettier . --write",
+    "prepare": "husky install",
     "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
@@ -43,15 +46,32 @@
     "mongoose-paginate-v2": "^1.6.2",
     "nodemailer": "^6.7.2",
     "puppeteer": "^13.7.0",
-    "stripe": "^9.9.0",
     "recharts": "^2.1.11",
+    "stripe": "^9.9.0",
     "use-constant": "^1.1.0",
     "xlsx": "^0.18.5",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
     "jest": "^24.9.0",
-    "nodemon": "^2.0.4"
+    "lint-staged": "^13.0.3",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,scss,css,md}": [
+      "npx prettier --write",
+      "npx eslint --fix"
+    ]
   }
 }
